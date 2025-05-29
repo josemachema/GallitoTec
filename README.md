@@ -1,6 +1,5 @@
 # GallitoTec
 Codigo de Gallitos
-Perfecto, aquí tienes la sección actualizada del `README.md`, ahora incluyendo **qué aplicación utilizar** para controlar el carrito:
 
 ---
 
