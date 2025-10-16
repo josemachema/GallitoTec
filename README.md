@@ -63,3 +63,44 @@ if (SerialBT.available()) {
 
 ---
 
+## 🔌 Conexiones entre ESP32, TB6612FNG y batería
+
+### 📦 Módulo TB6612FNG ↔ ESP32
+
+| TB6612FNG | ESP32     | Descripción                         |
+|-----------|-----------|-------------------------------------|
+| AIN1      | GPIO 25   | Dirección Motor A                   |
+| AIN2      | GPIO 26   | Dirección Motor A                   |
+| PWMA      | GPIO 32   | PWM para Motor A                    |
+| BIN1      | GPIO 27   | Dirección Motor B                   |
+| BIN2      | GPIO 14   | Dirección Motor B                   |
+| PWMB      | GPIO 33   | PWM para Motor B                    |
+| STBY      | GPIO 15   | Activa el puente (poner en HIGH)    |
+| VM        | + batería | Alimentación de motores (6V–12V)    |
+| VCC       | 5V ESP32  | Alimentación lógica del puente      |
+| GND       | GND común | Tierra común con ESP32 y batería    |
+
+---
+
+### 🔋 Conexión de la batería (para los motores)
+
+- **Positivo (+)** → Conectar al pin **VM** del TB6612FNG  
+- **Negativo (–)** → Conectar al **GND** del TB6612FNG **y también al GND del ESP32**
+
+> ⚠️ **No conectes directamente el + de la batería al pin 5V del ESP32**.  
+> Si deseas alimentar también el ESP32 desde la misma batería, utiliza un **regulador de voltaje** (como un **LM2596**) y conecta la salida regulada de 5V al pin **Vin** o **5V** del ESP32.
+
+---
+
+### 📱 Comunicación Bluetooth
+
+- El ESP32 se empareja vía Bluetooth con el nombre: **`Friforce`**
+- Puedes usar una app como:
+  - `Serial Bluetooth Terminal` (Android)
+  - `Bluetooth RC Controller` u otras similares
+- Comandos disponibles:
+  - `'F'` → Adelante
+  - `'B'` → Atrás
+  - `'L'` → Izquierda
+  - `'R'` → Derecha
+  - `'S'` → Detener
