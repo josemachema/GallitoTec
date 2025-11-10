@@ -1,3 +1,36 @@
+Motor izquierdo (BTS7960 #1)
+
+L_R_EN → GPIO 32
+
+L_L_EN → GPIO 33
+
+L_RPWM → GPIO 25
+
+L_LPWM → GPIO 26
+
+Motor derecho (BTS7960 #2)
+
+R_R_EN → GPIO 27
+
+R_L_EN → GPIO 14
+
+R_RPWM → GPIO 12
+
+R_LPWM → GPIO 13
+
+Alimentación de ambos BTS7960:
+
+VCC → 5V
+
+GND → GND del ESP32
+
+B+ / B- → batería de motor (ej. 12V)
+
+M+ / M- → motor correspondiente
+
+Importante: GND de batería y GND del ESP32 unidos.
+
+
 # GallitoTec
 Codigo de Gallitos
 
